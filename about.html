@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>About &amp; Contact — Ramiro Morales</title>
+<meta name="description" content="About Ramiro Morales — Dallas–Fort Worth photographer. Get in touch for bookings, prints, and commissions." />
+<link rel="preconnect" href="https://images.squarespace-cdn.com" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav__brand mono" href="index.html">RAMIRO&nbsp;MORALES</a>
+  <div class="nav__links mono">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="shop.html">Prints</a>
+    <a href="about.html" class="active">About</a>
+    <a href="#" class="nav__cart" data-open-cart>Cart <span class="nav__cart-count">0</span></a>
+  </div>
+  <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- SHORT HERO -->
+<header class="hero hero--short">
+  <div class="hero__media"><img src="https://images.squarespace-cdn.com/content/v1/63ba51fb90f98d55e734bffe/1674612120333-X0J608A03RUD5YSI0SOW/DJI_0532-Edit-Edit.jpg?format=2500w" alt="Aerial neighborhood" /></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <div class="hero__eyebrow mono">About</div>
+    <h1 data-hero-title="RAMIRO"></h1>
+    <div class="hero__sub">Photographer · Dallas–Fort Worth</div>
+  </div>
+</header>
+
+<!-- BIO -->
+<section class="section">
+  <div class="wrap">
+    <div class="split reveal">
+      <div class="split__media" style="aspect-ratio:4/5"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/63ba51fb90f98d55e734bffe/1674781293133-JZ9MG95HR95HGTJ6NEEF/8E8A1553.jpg?format=1200w" alt="Ramiro Morales" /></div>
+      <div>
+        <div class="eyebrow mono">Hey, I'm Ramiro</div>
+        <h2>Five years, one obsession:<br>making Texas look its best.</h2>
+        <p>I'm a Dallas-based photographer and licensed drone pilot. I shoot real estate that sells, portraits that feel like the person, and aerials that turn a familiar city into something cinematic.</p>
+        <p class="dim">Whether it's a listing that needs to stand out, a family that wants timeless portraits, or a wall that needs a skyline — I'd love to help.</p>
+        <div class="hero__actions" style="opacity:1;transform:none;justify-content:flex-start;margin-top:26px">
+          <a href="tel:+14694321084" class="btn btn--ghost">469 432 1084</a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener" class="btn btn--ghost">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="block__head">
+      <div><div class="eyebrow mono reveal">Get in touch</div><div class="lead reveal">Start a <span class="dim">project.</span></div></div>
+      <div class="count mono reveal">REPLIES WITHIN 24H</div>
+    </div>
+    <!-- Netlify Forms: submissions email Ramiro automatically once deployed on Netlify.
+         (Enable the notification in Netlify: Forms → contact → Settings & notifications.) -->
+    <form class="form reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hp" hidden><label>Leave this empty: <input name="bot-field" /></label></p>
+      <div class="row">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required /></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="type">I'm interested in</label>
+          <select id="type" name="interest">
+            <option>Real estate shoot</option>
+            <option>Aerial / drone</option>
+            <option>Portrait session</option>
+            <option>Video / color grading</option>
+            <option>Buying a print / commission</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" /></div>
+      </div>
+      <div class="field"><label for="msg">Details</label><textarea id="msg" name="details" placeholder="Address, date, scope, or what you have in mind…"></textarea></div>
+      <button type="submit" class="btn btn--accent" style="justify-self:start">Send inquiry</button>
+      <p class="dim mono" style="font-size:11px;letter-spacing:.06em">Sends straight to Ramiro's inbox. Prefer to call or DM? <a href="mailto:ramiromorales234@gmail.com" style="color:var(--accent)">Email directly</a> or use the details above.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div><div class="footer__brand mono">RM</div><p>Aerial, architectural &amp; portrait photography across Dallas–Fort Worth.</p></div>
+      <div class="footer__col"><h4>Explore</h4><a href="portfolio.html">Portfolio</a><a href="services.html">Services</a><a href="shop.html">Prints</a><a href="about.html">About</a></div>
+      <div class="footer__col"><h4>Services</h4><a href="services.html">Real Estate</a><a href="services.html">Aerial &amp; Drone</a><a href="services.html">Portraits</a><a href="services.html">Video &amp; Color</a></div>
+      <div class="footer__col"><h4>Contact</h4><a href="tel:+14694321084">469 432 1084</a><a href="mailto:ramiromorales234@gmail.com">Email</a><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="footer__bottom mono"><span>© 2026 RAMIRO MORALES</span><span>DALLAS, TX</span></div>
+  </div>
+</footer>
+
+<div class="cart-overlay"></div>
+<aside class="cart" aria-label="Cart">
+  <div class="cart__head"><h3>Cart</h3><button class="cart__close" aria-label="Close">×</button></div>
+  <div class="cart__items"></div>
+  <div class="cart__foot">
+    <div class="cart__total"><span>Subtotal</span><b>$0</b></div>
+    <button class="btn btn--accent btn--full" data-checkout>Checkout</button>
+    <div class="cart__note">Shipping &amp; tax calculated at checkout. Secure payment via Stripe.</div>
+  </div>
+</aside>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/shop.js"></script>
+</body>
+</html>

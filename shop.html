@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Prints — Ramiro Morales</title>
+<meta name="description" content="Museum-quality fine-art prints of Dallas aerials and cityscapes by Ramiro Morales. Multiple sizes, shipped across the US." />
+<link rel="preconnect" href="https://images.squarespace-cdn.com" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav__brand mono" href="index.html">RAMIRO&nbsp;MORALES</a>
+  <div class="nav__links mono">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="shop.html" class="active">Prints</a>
+    <a href="about.html">About</a>
+    <a href="#" class="nav__cart" data-open-cart>Cart <span class="nav__cart-count">0</span></a>
+  </div>
+  <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- SHORT HERO -->
+<header class="hero hero--short">
+  <div class="hero__media"><img src="https://images.squarespace-cdn.com/content/v1/63ba51fb90f98d55e734bffe/1673492349758-VZ62IUWSLLLHD3SZINSL/DJI_0200.JPG?format=2500w" alt="Dallas skyline print" /></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <div class="hero__eyebrow mono">Fine-Art Prints</div>
+    <h1 data-hero-title="PRINTS"></h1>
+    <div class="hero__sub">Take the skyline home — shipped across the US.</div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="block__head">
+      <div><div class="eyebrow mono reveal">The Collection</div><div class="lead reveal">Signed &amp; <span class="dim">ready to hang.</span></div></div>
+      <div class="count mono reveal">GICLÉE · ARCHIVAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP GRID (built by shop.js) -->
+<section class="section" style="padding-top:44px">
+  <div class="wrap">
+    <div class="shop-filters" data-shop-filters></div>
+    <div class="shop-grid" data-shop></div>
+    <p class="dim mono reveal" style="font-size:12px;letter-spacing:.08em;margin-top:40px;text-align:center">Printed on archival museum paper. Frames not included. Sizes in inches. Custom sizes &amp; canvas on request.</p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip"><div class="strip__track" data-marquee="ARCHIVAL INKS|FREE US SHIPPING OVER $150|SIGNED BY THE ARTIST|30-DAY RETURNS|MADE IN TEXAS"></div></div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="eyebrow mono reveal" style="justify-content:center">Something specific?</div>
+    <h2 class="reveal">Want a custom<br>piece or size?</h2>
+    <p class="reveal">Commissions, large-format, and canvas available on request.</p>
+    <div class="cta__actions reveal">
+      <a href="about.html" class="btn btn--accent">Request a commission</a>
+      <a href="portfolio.html" class="btn btn--ghost">Browse the full portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div><div class="footer__brand mono">RM</div><p>Aerial, architectural &amp; portrait photography across Dallas–Fort Worth.</p></div>
+      <div class="footer__col"><h4>Explore</h4><a href="portfolio.html">Portfolio</a><a href="services.html">Services</a><a href="shop.html">Prints</a><a href="about.html">About</a></div>
+      <div class="footer__col"><h4>Prints</h4><a href="shop.html">The Collection</a><a href="about.html">Commissions</a><a href="about.html">Shipping &amp; Returns</a></div>
+      <div class="footer__col"><h4>Contact</h4><a href="tel:+14694321084">469 432 1084</a><a href="mailto:ramiromorales234@gmail.com">Email</a><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="footer__bottom mono"><span>© 2026 RAMIRO MORALES</span><span>DALLAS, TX</span></div>
+  </div>
+</footer>
+
+<div class="cart-overlay"></div>
+<aside class="cart" aria-label="Cart">
+  <div class="cart__head"><h3>Cart</h3><button class="cart__close" aria-label="Close">×</button></div>
+  <div class="cart__items"></div>
+  <div class="cart__foot">
+    <div class="cart__total"><span>Subtotal</span><b>$0</b></div>
+    <button class="btn btn--accent btn--full" data-checkout>Checkout</button>
+    <div class="cart__note">Shipping &amp; tax calculated at checkout. Secure payment via Stripe.</div>
+  </div>
+</aside>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/shop.js"></script>
+</body>
+</html>

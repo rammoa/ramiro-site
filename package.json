@@ -1,0 +1,9 @@
+{
+  "name": "ramiro-morales-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ramiro Morales photography — portfolio, services & print store",
+  "dependencies": {
+    "stripe": "^16.0.0"
+  }
+}
