@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Launch Guide — Ramiro Morales Website</title>
+<style>
+  :root{--bg:#0a0a0b;--bg2:#141416;--ink:#f5f3ef;--muted:#9a958c;--accent:#e8873b;--line:rgba(245,243,239,.12);--ok:#4ea86b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace}
+  .wrap{max-width:820px;margin:0 auto;padding:64px 22px 100px}
+  header{border-bottom:1px solid var(--line);padding-bottom:34px;margin-bottom:46px}
+  .kicker{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:clamp(32px,6vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.02}
+  header p{color:var(--muted);margin-top:16px;font-size:17px;max-width:60ch}
+  .time{display:inline-flex;gap:8px;align-items:center;margin-top:20px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:7px 14px;border-radius:100px}
+  .step{border:1px solid var(--line);border-radius:18px;padding:30px 30px 26px;margin-bottom:22px;background:var(--bg2);position:relative}
+  .step__n{position:absolute;top:-15px;left:26px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#0a0a0b;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .step h2{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:6px 0 6px}
+  .step .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  ol,ul{margin:12px 0 4px;padding-left:22px}
+  li{margin:9px 0}
+  code{background:rgba(245,243,239,.08);border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:13px;color:#ffd9b0}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;background:rgba(232,135,59,.06);border:1px solid rgba(232,135,59,.25);border-radius:12px;padding:16px 18px;margin:16px 0;font-size:14px}
+  .kv b{color:var(--accent)}
+  .note{border-left:2px solid var(--accent);padding:6px 0 6px 16px;margin:16px 0;color:var(--muted);font-size:14px}
+  .note b{color:var(--ink)}
+  .pill{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:4px 10px;margin-left:8px;vertical-align:middle}
+  a{color:var(--accent)}
+  .done{margin-top:40px;border:1px solid rgba(78,168,107,.4);background:rgba(78,168,107,.08);border-radius:18px;padding:26px 30px}
+  .done h2{font-size:20px;margin-bottom:8px}
+  .chk{color:var(--ok);font-weight:700}
+  hr{border:none;border-top:1px solid var(--line);margin:14px 0}
+  .small{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker mono">Launch Guide</div>
+    <h1>Get ramiromorales.com live.</h1>
+    <p>Your site is built. This is the click-by-click to put it online, take card payments, and route contact-form messages to your inbox. You only need a browser — no coding.</p>
+    <span class="time mono">⏱ About 30–45 minutes</span>
+  </header>
+
+  <div class="step">
+    <div class="step__n">1</div>
+    <h2>Put the files on GitHub <span class="pill">easiest updates</span></h2>
+    <div class="sub">Netlify pulls your site from GitHub and re-deploys automatically whenever you change something.</div>
+    <ol>
+      <li>Create a free account at <a href="https://github.com" target="_blank">github.com</a>.</li>
+      <li>Click <b>New repository</b> → name it <code>ramiro-site</code> → <b>Create</b>.</li>
+      <li>On the repo page, click <b>uploading an existing file</b>, then drag in <b>everything inside</b> the <code>site</code> folder (not the folder itself — its contents). Commit.</li>
+    </ol>
+    <div class="note"><b>Prefer no GitHub?</b> You can skip straight to Step 2 and drag-and-drop the <code>site</code> folder onto Netlify. The trade-off: future updates mean re-dragging the folder instead of an automatic re-deploy.</div>
+  </div>
+
+  <div class="step">
+    <div class="step__n">2</div>
+    <h2>Deploy on Netlify</h2>
+    <div class="sub">Free hosting that runs your checkout function and contact form.</div>
+    <ol>
+      <li>Sign up at <a href="https://netlify.com" target="_blank">netlify.com</a> (use "Sign up with GitHub").</li>
+      <li>Click <b>Add new site → Import an existing project → GitHub</b> → pick <code>ramiro-site</code>.</li>
+      <li>Leave the build settings as detected (the included <code>netlify.toml</code> sets them) → <b>Deploy</b>.</li>
+      <li>In ~30 seconds you'll get a live link like <code>random-name.netlify.app</code>. Open it — your site is live.</li>
+    </ol>
+  </div>
+
+  <div class="step">
+    <div class="step__n">3</div>
+    <h2>Turn on card payments (Stripe)</h2>
+    <div class="sub">Your prints already have a cart & checkout — this connects the money to you.</div>
+    <ol>
+      <li>Create a free account at <a href="https://stripe.com" target="_blank">stripe.com</a> and finish the business details so you can accept live payments.</li>
+      <li>Go to <b>Developers → API keys</b> and copy your <b>Secret key</b>.
+        <div class="kv mono"><b>Testing?</b><span>use the key starting <code>sk_test_…</code></span><b>Live?</b><span>use the key starting <code>sk_live_…</code></span></div>
+      </li>
+      <li>In <b>Netlify → Site configuration → Environment variables → Add a variable</b>:
+        <div class="kv mono"><b>Key</b><span><code>STRIPE_SECRET_KEY</code></span><b>Value</b><span>paste your Stripe secret key</span></div>
+      </li>
+      <li><b>Deploys → Trigger deploy → Deploy site</b> so the key takes effect.</li>
+      <li>Test it: add a print to the cart → Checkout → you should land on Stripe's payment page. Use Stripe's test card <code>4242 4242 4242 4242</code>, any future date &amp; CVC.</li>
+    </ol>
+    <div class="note"><b>Your key stays private.</b> It lives only in Netlify's server settings — never in the website code, and never shared with anyone (including me). The browser never sees it.</div>
+  </div>
+
+  <div class="step">
+    <div class="step__n">4</div>
+    <h2>Send contact-form messages to your inbox</h2>
+    <div class="sub">The About page form is wired to Netlify Forms — no code, just switch on the email.</div>
+    <ol>
+      <li>On your live site, open <b>About</b>, fill the form and submit once (this registers it with Netlify).</li>
+      <li>In <b>Netlify → Forms → contact → Settings &amp; notifications → Add notification → Email notification</b>.</li>
+      <li>Enter <code>ramiromorales234@gmail.com</code> → save.</li>
+    </ol>
+    <div class="small">Every inquiry now emails you automatically, and is also saved under Netlify → Forms. Spam is filtered by a built-in honeypot.</div>
+  </div>
+
+  <div class="step">
+    <div class="step__n">5</div>
+    <h2>Point your domain</h2>
+    <div class="sub">Move <code>ramiromorales.com</code> from Squarespace to the new site.</div>
+    <ol>
+      <li>In <b>Netlify → Domain management → Add a domain</b> → enter <code>ramiromorales.com</code>.</li>
+      <li>Netlify shows the DNS records to set. In your domain registrar (where you bought the domain), update them as shown. <span class="small">If the domain is currently managed inside Squarespace, you'll repoint it there or transfer it out first.</span></li>
+      <li>Wait for it to verify (minutes to a few hours) — Netlify adds a free HTTPS certificate automatically.</li>
+    </ol>
+    <div class="note"><b>Keep Squarespace live until this step is done and verified</b>, so the site is never down. Cancel Squarespace only once the new site is up on your domain.</div>
+  </div>
+
+  <div class="step">
+    <div class="step__n">6</div>
+    <h2>Make it yours</h2>
+    <div class="sub">Quick edits, all in <code>assets/js/data.js</code>.</div>
+    <ul>
+      <li><b>Prints, prices, sizes:</b> the <code>PRINT_ITEMS</code> and <code>PRINT_SIZES</code> lists. Change a price in one place and re-deploy. (Then match <code>ALLOWED_PRICES</code> in <code>netlify/functions/create-checkout.js</code>.)</li>
+      <li><b>Own image hosting:</b> images currently load from your Squarespace CDN. Later, export ~2000px JPGs from your Drive originals, host them (Netlify, Cloudinary), and swap the URLs.</li>
+      <li><b>Copy &amp; bio:</b> edit the text directly in the <code>.html</code> files.</li>
+    </ul>
+  </div>
+
+  <div class="done">
+    <h2><span class="chk">✓</span> That's the whole launch.</h2>
+    <p class="small">Live site, working store, card payments, and contact forms hitting your inbox. Stuck on any step? Send me where you are and I'll walk you through it — or I can adjust prints, pricing, or copy anytime.</p>
+  </div>
+</div>
+</body>
+</html>
