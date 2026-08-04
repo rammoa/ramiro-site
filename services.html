@@ -49,7 +49,7 @@
       <div class="count mono reveal">DFW &amp; SURROUNDING</div>
     </div>
     <div class="cards" data-services></div>
-    <p class="dim mono reveal" style="font-size:12px;letter-spacing:.08em;margin-top:26px;text-align:center">Prices are starting points — final quote depends on square footage, travel &amp; scope.</p>
+    <p class="dim mono reveal" style="font-size:12px;letter-spacing:.08em;margin-top:26px;text-align:center">Every project is quoted individually — tell me the scope and I'll send a custom proposal.</p>
   </div>
 </section>
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var el = document.createElement('div');
       el.className = 'card reveal';
       el.style.transitionDelay = (i % 3 * 0.08) + 's';
-      el.innerHTML = '<div class="card__k">' + s.k + '</div><h3>' + s.title + '</h3><p>' + s.desc + '</p><div class="card__price">' + s.price + '</div>';
+      el.innerHTML = '<div class="card__k">' + s.k + '</div><h3>' + s.title + '</h3><p>' + s.desc + '</p><a class="card__cta link-arrow mono" href="about.html">REQUEST A QUOTE →</a>';
       box.appendChild(el);
     });
     // observe the freshly-added cards
