@@ -69,6 +69,98 @@
   </div>
 </section>
 
+<!-- VIRTUAL STAGING (before / after) -->
+<section class="section" style="padding-top:0" id="virtual-staging">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Real Estate</div>
+    <div class="lead reveal">Virtual <span class="dim">staging.</span></div>
+    <p class="sub reveal">Empty rooms, reimagined. Drag each slider to see a vacant space transformed into a buyer-ready home — no furniture rental, no staging crew, delivered in days.</p>
+
+    <div class="ba-grid ba-grid--3">
+      <div class="reveal">
+        <div class="ba" data-ba>
+          <img class="ba__layer" src="assets/img/services/livingroom-before.jpg" alt="Living room before virtual staging" loading="lazy" />
+          <img class="ba__layer ba__after" src="assets/img/services/livingroom-after.jpg" alt="Living room after virtual staging" loading="lazy" />
+          <span class="ba__label ba__label--before mono">Before</span>
+          <span class="ba__label ba__label--after mono">Staged</span>
+          <div class="ba__divider"><div class="ba__handle">⇄</div></div>
+          <div class="ba__hint mono">Drag to compare</div>
+        </div>
+        <div class="ba-cap">Living Room</div>
+      </div>
+      <div class="reveal">
+        <div class="ba" data-ba>
+          <img class="ba__layer" src="assets/img/services/dining-before.jpg" alt="Dining area before virtual staging" loading="lazy" />
+          <img class="ba__layer ba__after" src="assets/img/services/dining-after.jpg" alt="Dining area after virtual staging" loading="lazy" />
+          <span class="ba__label ba__label--before mono">Before</span>
+          <span class="ba__label ba__label--after mono">Staged</span>
+          <div class="ba__divider"><div class="ba__handle">⇄</div></div>
+          <div class="ba__hint mono">Drag to compare</div>
+        </div>
+        <div class="ba-cap">Dining Area</div>
+      </div>
+      <div class="reveal">
+        <div class="ba" data-ba>
+          <img class="ba__layer" src="assets/img/services/bedroom-before.jpg" alt="Master bedroom before virtual staging" loading="lazy" />
+          <img class="ba__layer ba__after" src="assets/img/services/bedroom-after.jpg" alt="Master bedroom after virtual staging" loading="lazy" />
+          <span class="ba__label ba__label--before mono">Before</span>
+          <span class="ba__label ba__label--after mono">Staged</span>
+          <div class="ba__divider"><div class="ba__handle">⇄</div></div>
+          <div class="ba__hint mono">Drag to compare</div>
+        </div>
+        <div class="ba-cap">Master Bedroom</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TWILIGHT (before / after) -->
+<section class="section" style="padding-top:0;border-top:1px solid var(--line)" id="twilight">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Real Estate</div>
+    <div class="lead reveal">Golden <span class="dim">twilight.</span></div>
+    <p class="sub reveal">A listing shot at blue hour sells the dream. Drag to see a daytime exterior turned into a warm, magazine-cover twilight scene that stops the scroll.</p>
+
+    <div class="ba-grid ba-grid--2">
+      <div class="reveal">
+        <div class="ba ba--169" data-ba>
+          <img class="ba__layer" src="assets/img/services/driveway-day.jpg" alt="Driveway in daylight" loading="lazy" />
+          <img class="ba__layer ba__after" src="assets/img/services/driveway-twilight.jpg" alt="Driveway at twilight" loading="lazy" />
+          <span class="ba__label ba__label--before mono">Day</span>
+          <span class="ba__label ba__label--after mono">Twilight</span>
+          <div class="ba__divider"><div class="ba__handle">⇄</div></div>
+          <div class="ba__hint mono">Drag to compare</div>
+        </div>
+        <div class="ba-cap">Front &amp; Driveway</div>
+      </div>
+      <div class="reveal">
+        <div class="ba ba--169" data-ba>
+          <img class="ba__layer" src="assets/img/services/backyard-day.jpg" alt="Backyard in daylight" loading="lazy" />
+          <img class="ba__layer ba__after" src="assets/img/services/backyard-twilight.jpg" alt="Backyard at twilight" loading="lazy" />
+          <span class="ba__label ba__label--before mono">Day</span>
+          <span class="ba__label ba__label--after mono">Twilight</span>
+          <div class="ba__divider"><div class="ba__handle">⇄</div></div>
+          <div class="ba__hint mono">Drag to compare</div>
+        </div>
+        <div class="ba-cap">Backyard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL ESTATE VIDEO -->
+<section class="section" style="padding-top:0" id="listing-video">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Real Estate</div>
+    <div class="lead reveal">The walk-<span class="dim">through.</span></div>
+    <p class="sub reveal">Vertical listing tours built for Instagram, TikTok, and Reels — the way buyers actually scroll. Shot, cut, and color-graded, ready to post.</p>
+    <div class="rev-video reveal">
+      <video src="assets/video/amy-tour.mp4" poster="assets/img/services/amy-poster.jpg"
+             muted loop playsinline controls preload="none" data-autoplay-inview></video>
+    </div>
+  </div>
+</section>
+
 <!-- VIDEO SPLIT -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -139,6 +231,42 @@ document.addEventListener('DOMContentLoaded', function () {
     // observe the freshly-added cards
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
     box.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  }
+});
+
+/* before/after sliders + play-video-in-view */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[data-ba]').forEach(function (ba) {
+    var after = ba.querySelector('.ba__after');
+    var divider = ba.querySelector('.ba__divider');
+    function setPos(clientX) {
+      var r = ba.getBoundingClientRect();
+      var pct = ((clientX - r.left) / r.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      divider.style.left = pct + '%';
+      ba.classList.add('touched');
+    }
+    var dragging = false;
+    function down(e) { dragging = true; setPos((e.touches ? e.touches[0] : e).clientX); }
+    function move(e) { if (!dragging) return; setPos((e.touches ? e.touches[0] : e).clientX); if (e.cancelable) e.preventDefault(); }
+    function up() { dragging = false; }
+    ba.addEventListener('mousedown', down); window.addEventListener('mousemove', move); window.addEventListener('mouseup', up);
+    ba.addEventListener('touchstart', down, { passive: true }); ba.addEventListener('touchmove', move, { passive: false }); window.addEventListener('touchend', up);
+    ba.addEventListener('click', function (e) { if (e.target.closest('.ba__handle')) return; setPos(e.clientX); });
+    after.style.clipPath = 'inset(0 0 0 50%)';
+  });
+
+  var vids = document.querySelectorAll('video[data-autoplay-inview]');
+  if (vids.length && 'IntersectionObserver' in window) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else { v.pause(); }
+      });
+    }, { threshold: 0.5 });
+    vids.forEach(function (v) { vio.observe(v); });
   }
 });
 </script>
