@@ -159,12 +159,21 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .cell:hover .tag{opacity:1;transform:none}
 .cell::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.4),transparent 45%);opacity:0;transition:.5s var(--ease)}
 .cell:hover::after{opacity:1}
+
+/* People — masonry (editorial): natural aspect ratios, mixed orientations */
+.g-people{display:block;column-count:4;column-gap:clamp(10px,1.4vw,18px)}
+.g-people .cell{display:block;width:100%;height:auto;aspect-ratio:auto;break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 clamp(10px,1.4vw,18px)}
+.g-people .cell img{height:auto;transform:scale(1.03)}
+.g-people .cell:hover img{transform:scale(1.07)}
+@media(max-width:1080px){ .g-people{column-count:3} }
+
 @media(max-width:820px){
   .g-aerial{grid-template-columns:repeat(2,1fr)}
   .g-aerial .cell:nth-child(n){grid-column:span 1}
   .g-aerial .cell:nth-child(1){grid-column:span 2}
   .g-3{grid-template-columns:repeat(2,1fr)}
   .g-4{grid-template-columns:repeat(2,1fr)}
+  .g-people{column-count:2}
 }
 
 /* ---------- MARQUEE ---------- */
