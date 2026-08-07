@@ -26,25 +26,24 @@
     ['1674612116908-H6RUF3Z4C9ECE7E6DP8H/8E8A6617-HDR.jpg', 'Primary suite · HDR'],
     ['1674612117522-IAKJKKKU7M42CL40T2U3/8E8A8795-HDR-Edit-Edit-Edit-Edit.jpg', 'Exterior · dusk']
   ];
+  // People — new "Other Work" (self-hosted) + existing portraits (CDN), interleaved.
   var PORTRAIT = [
-    // NEW — "Other Work" (self-hosted). First photo replaced per owner request.
     ['assets/img/portfolio/people/portrait-1.jpg', 'Headshot'],
-    ['assets/img/portfolio/people/graduation.jpg', 'Graduation'],
-    ['assets/img/portfolio/people/lifestyle-1.jpg', 'Lifestyle'],
-    ['assets/img/portfolio/people/razors-3.jpg', 'Barbershop'],
-    ['assets/img/portfolio/people/portrait-2.jpg', 'Headshot'],
-    ['assets/img/portfolio/people/lifestyle-2.jpg', 'Lifestyle'],
-    ['assets/img/portfolio/people/bw-graduation.jpg', 'Graduation'],
-    ['assets/img/portfolio/people/razors-1.jpg', 'Barbershop'],
-    ['assets/img/portfolio/people/razors-2.jpg', 'Barbershop'],
-    // existing portraits (kept)
     ['1674781293200-5R2PION4RCTKTHSKFT8G/8E8A1587.jpg', 'Portrait'],
+    ['assets/img/portfolio/people/graduation.jpg', 'Graduation'],
     ['1674781294098-D4QT17DA3SR3OUM5HF0F/8E8A2015.jpg', 'Portrait'],
+    ['assets/img/portfolio/people/lifestyle-1.jpg', 'Lifestyle'],
+    ['assets/img/portfolio/people/razors-1.jpg', 'Barbershop'],
     ['1674781294224-YC78LFG92G1TT7HXX14O/8E8A5936.jpg', 'Portrait'],
+    ['assets/img/portfolio/people/portrait-2.jpg', 'Headshot'],
     ['1674781294984-M03ZUNYG85KMIZY1O09E/8E8A5973.jpg', 'Portrait'],
+    ['assets/img/portfolio/people/razors-3.jpg', 'Barbershop'],
     ['1674824585876-TK2LPTONVX82KEOAUPCC/8E8A9723-Edit.jpg', 'Portrait'],
+    ['assets/img/portfolio/people/bw-graduation.jpg', 'Graduation'],
     ['1674824841510-90WNJTJW25TW8FAGZP9V/8E8A9613-Edit.jpg', 'Portrait'],
-    ['1674781297147-V2KEW8F7PHEZ808WBDOJ/8E8A9740.jpg', 'Portrait']
+    ['assets/img/portfolio/people/lifestyle-2.jpg', 'Lifestyle'],
+    ['1674781297147-V2KEW8F7PHEZ808WBDOJ/8E8A9740.jpg', 'Portrait'],
+    ['assets/img/portfolio/people/razors-2.jpg', 'Barbershop']
   ];
 
   // ============================================================
