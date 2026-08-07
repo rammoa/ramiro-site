@@ -49,7 +49,7 @@
         c.href = el.getAttribute('data-link') || '#';
         c.style.transitionDelay = (i % 6 * 0.07) + 's';
         var im = document.createElement('img'); im.loading = 'lazy';
-        im.src = S.img(it[0], tall ? 900 : 1400); im.alt = it[1];
+        im.src = /^(assets\/|https?:)/.test(it[0]) ? it[0] : S.img(it[0], tall ? 900 : 1400); im.alt = it[1];
         var tag = document.createElement('span'); tag.className = 'tag mono'; tag.textContent = it[1];
         c.appendChild(im); c.appendChild(tag); el.appendChild(c);
       });

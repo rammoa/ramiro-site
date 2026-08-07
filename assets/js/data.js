@@ -27,7 +27,17 @@
     ['1674612117522-IAKJKKKU7M42CL40T2U3/8E8A8795-HDR-Edit-Edit-Edit-Edit.jpg', 'Exterior · dusk']
   ];
   var PORTRAIT = [
-    ['1674781293133-JZ9MG95HR95HGTJ6NEEF/8E8A1553.jpg', 'Portrait'],
+    // NEW — "Other Work" (self-hosted). First photo replaced per owner request.
+    ['assets/img/portfolio/people/portrait-1.jpg', 'Headshot'],
+    ['assets/img/portfolio/people/graduation.jpg', 'Graduation'],
+    ['assets/img/portfolio/people/lifestyle-1.jpg', 'Lifestyle'],
+    ['assets/img/portfolio/people/razors-3.jpg', 'Barbershop'],
+    ['assets/img/portfolio/people/portrait-2.jpg', 'Headshot'],
+    ['assets/img/portfolio/people/lifestyle-2.jpg', 'Lifestyle'],
+    ['assets/img/portfolio/people/bw-graduation.jpg', 'Graduation'],
+    ['assets/img/portfolio/people/razors-1.jpg', 'Barbershop'],
+    ['assets/img/portfolio/people/razors-2.jpg', 'Barbershop'],
+    // existing portraits (kept)
     ['1674781293200-5R2PION4RCTKTHSKFT8G/8E8A1587.jpg', 'Portrait'],
     ['1674781294098-D4QT17DA3SR3OUM5HF0F/8E8A2015.jpg', 'Portrait'],
     ['1674781294224-YC78LFG92G1TT7HXX14O/8E8A5936.jpg', 'Portrait'],
@@ -81,13 +91,14 @@
   var PRINT_CATEGORIES = ['All', 'Skyline', 'Cityscape', 'Aerial', 'Street', 'Portrait'];
 
   // -------- SERVICE PACKAGES --------
+  // No prices — every project is quoted individually. Cards show a "request a quote" CTA.
   var SERVICES = [
-    { k: 'Real Estate', title: 'Listing Photography', desc: 'HDR interior & exterior stills that make a property stand out and sell faster.', price: 'from <b>$175</b> / listing' },
-    { k: 'Real Estate', title: 'Aerial & Drone', desc: 'Licensed drone photo & video — lot lines, neighborhood context, cinematic reveals.', price: 'from <b>$150</b> / shoot' },
-    { k: 'Real Estate', title: 'Listing Video Tour', desc: 'Walkthrough video edited to music, formatted for MLS, YouTube & social.', price: 'from <b>$275</b> / property' },
-    { k: 'People', title: 'Portrait Sessions', desc: 'Headshots, families, couples & personal branding — studio or on location.', price: 'from <b>$225</b> / session' },
-    { k: 'Video', title: 'Color Grading', desc: 'Cinematic color for filmmakers & creators — your footage, elevated.', price: 'custom quote' },
-    { k: 'Creative', title: 'Commercial & Events', desc: 'Brands, venues & events across DFW. Photo, video, or both.', price: 'custom quote' }
+    { k: 'Real Estate', title: 'Listing Photography', desc: 'HDR interior & exterior stills that make a property stand out and sell faster.' },
+    { k: 'Real Estate', title: 'Aerial & Drone', desc: 'Licensed drone photo & video — lot lines, neighborhood context, cinematic reveals.' },
+    { k: 'Real Estate', title: 'Listing Video Tour', desc: 'Walkthrough video edited to music, formatted for MLS, YouTube & social.' },
+    { k: 'People', title: 'Portrait Sessions', desc: 'Headshots, families, couples & personal branding — studio or on location.' },
+    { k: 'Video', title: 'Color Grading', desc: 'Cinematic color for filmmakers & creators — your footage, elevated.' },
+    { k: 'Creative', title: 'Commercial & Events', desc: 'Brands, venues & events across DFW. Photo, video, or both.' }
   ];
 
   w.SITE = {
