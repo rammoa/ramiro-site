@@ -18,11 +18,17 @@
     ['1674612120333-X0J608A03RUD5YSI0SOW/DJI_0532-Edit-Edit.jpg', 'Neighborhood grid'],
     ['1673492349758-VZ62IUWSLLLHD3SZINSL/DJI_0200.JPG', 'Skyline at dusk']
   ];
+  // Spaces / Real estate — new self-hosted photos interleaved with existing CDN shots.
   var ESTATE = [
+    ['assets/img/portfolio/spaces/exterior.jpg', 'Exterior'],
     ['1674612114001-TD0YZFEYBRZMC5SHPITX/8E8A4726.jpg', 'Living room'],
+    ['assets/img/portfolio/spaces/open-concept.jpg', 'Open concept'],
     ['1674612114348-0TP9KV75KO7XGKOKCH2U/8E8A4734.jpg', 'Dining'],
-    ['1674612115142-DISGWEMOO55JKP50T250/8E8A4737.jpg', 'Kitchen'],
+    ['assets/img/portfolio/spaces/kitchen-1.jpg', 'Kitchen'],
     ['1674612115646-3840LYU1ZSVO7QLE0AHB/8E8A5155-HDR-Edit.jpg', 'Great room · HDR'],
+    ['assets/img/portfolio/spaces/living-room.jpg', 'Great room'],
+    ['1674612115142-DISGWEMOO55JKP50T250/8E8A4737.jpg', 'Kitchen'],
+    ['assets/img/portfolio/spaces/kitchen-2.jpg', 'Kitchen'],
     ['1674612116908-H6RUF3Z4C9ECE7E6DP8H/8E8A6617-HDR.jpg', 'Primary suite · HDR'],
     ['1674612117522-IAKJKKKU7M42CL40T2U3/8E8A8795-HDR-Edit-Edit-Edit-Edit.jpg', 'Exterior · dusk']
   ];
