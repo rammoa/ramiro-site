@@ -64,7 +64,6 @@
 
   // [ id, title, badge, imageSegment ]
   var PRINT_ITEMS = [
-    ['dallas-skyline',      'Dallas Skyline',        'Skyline',   '1673492349758-VZ62IUWSLLLHD3SZINSL/DJI_0200.JPG'],
     ['el-sunset-de-dallas', 'El Sunset de Dallas',   'Skyline',   '1674614258130-28UQRJZMCEM5MX36KS3B/DJI_0200-2.JPG'],
     ['la-dallas',           'La Dallas',             'Cityscape', '1673492350448-WHWRY4FDGVC3UZFPSNB9/GalaxyDallas2.jpg'],
     ['el-att-fog',          'El AT&T Fog',           'Cityscape', '1673492359292-BGUKPQYCUZT1MRM6Y2J9/IMG_5347-Edit.jpg'],
@@ -75,7 +74,7 @@
     ['el-boat-drive',       'El Boat Drive',         'Aerial',    '1673492349192-CIO2VFINQXAZX0CRO49P/DJI_0386-Edit.jpg'],
     ['la-ball',             'La Ball',               'Street',    '1673492368893-DOIJ2FPM788IZTRGNY5H/IMG_8937-Edit.jpg'],
     ['la-street',           'La Street',             'Street',    '1673492369529-5CGVK5C15IUQ2KHU1NFT/IMG_7834-Edit.jpg'],
-    ['el-woody',            'El Woody',              'Street',    '1673525699535-Q6S5I41ZO6BMBAEP6RJJ/......jpg'],
+    ['el-woody',            'El Woody',              'Street',    'assets/img/prints/el-woody.jpg'],
     ['el-thunder',          'El Thunder',            'Street',    '1675989356581-0AP8NDO20MVSHFPQVXPK/IMG_0830.jpg'],
     ['el-kid-thunder',      'El Kid Thunder',        'Street',    '1673492358001-4VODPRYK28YGVMJD0CRS/IMG_0346-Edit-Edit.jpg'],
     ['el-bro-on-el-wire',   'El Bro on El Wire',     'Street',    '1674614111848-L9MYJQ9NTU8Y9OXM4MNN/4-Edit-Edit-Edit.JPG'],

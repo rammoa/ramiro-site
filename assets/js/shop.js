@@ -161,6 +161,8 @@
     }
 
     // Build product cards if a shop grid exists
+    // Use local paths directly; otherwise treat as a CDN segment via SITE.img.
+    function pimg(seg, w) { return /^(assets\/|https?:)/.test(seg) ? seg : window.SITE.img(seg, w); }
     var grid = document.querySelector('[data-shop]');
     if (grid && window.SITE) {
       window.SITE.PRINTS.forEach(function (p, idx) {
@@ -171,7 +173,7 @@
         el.style.transitionDelay = (idx % 3 * 0.06) + 's';
         el.innerHTML =
           '<div class="product__img"><span class="product__badge">' + p.badge + '</span>' +
-            '<img loading="lazy" src="' + window.SITE.img(p.img, 900) + '" alt="' + p.title + '"></div>' +
+            '<img loading="lazy" src="' + pimg(p.img, 900) + '" alt="' + p.title + '"></div>' +
           '<div class="product__title">' + p.title + '</div>' +
           '<div class="product__meta"><span class="dim mono" style="font-size:12px">FINE-ART PRINT</span>' +
             '<span class="product__price" data-price>' + money(sizes[0][1]) + '</span></div>' +
@@ -191,7 +193,7 @@
           });
         });
         el.querySelector('[data-add]').addEventListener('click', function () {
-          window.addToCart({ id: p.id, title: p.title, img: window.SITE.img(p.img, 600), size: sel.size, price: sel.price });
+          window.addToCart({ id: p.id, title: p.title, img: pimg(p.img, 600), size: sel.size, price: sel.price });
         });
         grid.appendChild(el);
       });
