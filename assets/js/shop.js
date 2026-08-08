@@ -195,6 +195,13 @@
         });
         grid.appendChild(el);
       });
+      // Reveal the freshly-built products. main.js's reveal observer runs on
+      // DOMContentLoaded BEFORE these cards exist, so it never sees them —
+      // without this the grid stays invisible until a filter is clicked.
+      var pio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); pio.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      grid.querySelectorAll('.product').forEach(function (el) { pio.observe(el); });
     }
   });
 })();
