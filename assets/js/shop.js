@@ -171,10 +171,11 @@
         el.className = 'product';
         el.setAttribute('data-cat', p.badge);
         el.style.transitionDelay = (idx % 3 * 0.06) + 's';
+        var href = 'product.html?id=' + encodeURIComponent(p.id);
         el.innerHTML =
-          '<div class="product__img"><span class="product__badge">' + p.badge + '</span>' +
-            '<img loading="lazy" src="' + pimg(p.img, 900) + '" alt="' + p.title + '"></div>' +
-          '<div class="product__title">' + p.title + '</div>' +
+          '<a class="product__img" href="' + href + '"><span class="product__badge">' + p.badge + '</span>' +
+            '<img loading="lazy" src="' + pimg(p.img, 900) + '" alt="' + p.title + '"></a>' +
+          '<a class="product__title" href="' + href + '">' + p.title + '</a>' +
           '<div class="product__meta"><span class="dim mono" style="font-size:12px">FINE-ART PRINT</span>' +
             '<span class="product__price" data-price>' + money(sizes[0][1]) + '</span></div>' +
           '<div class="product__sizes">' + sizes.map(function (s, i) {
