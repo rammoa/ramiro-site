@@ -56,28 +56,10 @@
         <div class="count mono" data-room-scale>18 × 24 in</div>
       </div>
       <div class="room" data-room>
-        <div class="room__wall"></div>
-        <div class="room__baseboard"></div>
-        <div class="room__floor"></div>
-        <!-- framed art on the wall (size set by JS) -->
+        <!-- framed art hung on the wall (size set by JS) -->
         <div class="room__art" data-room-art><div class="room__mat"><img data-room-img alt="" /></div></div>
-        <!-- furniture for scale -->
-        <div class="room__sofa">
-          <span class="room__sofa-back"></span>
-          <span class="room__cushion room__cushion--l"></span>
-          <span class="room__cushion room__cushion--r"></span>
-          <span class="room__sofa-seat"></span>
-          <span class="room__leg room__leg--l"></span>
-          <span class="room__leg room__leg--r"></span>
-        </div>
-        <div class="room__plant">
-          <span class="room__leaf room__leaf--1"></span>
-          <span class="room__leaf room__leaf--2"></span>
-          <span class="room__leaf room__leaf--3"></span>
-          <span class="room__pot"></span>
-        </div>
       </div>
-      <p class="dim mono" style="font-size:11px;letter-spacing:.08em;margin-top:14px;text-align:center">Shown on a 10-ft wall for scale · illustration only · frame not included</p>
+      <p class="dim mono" style="font-size:11px;letter-spacing:.08em;margin-top:14px;text-align:center">Shown in a real living room for scale · frame not included</p>
     </div>
 
     <!-- YOU MIGHT ALSO LIKE -->
@@ -129,7 +111,7 @@
   function pimg(seg, w) { return /^(assets\/|https?:)/.test(seg) ? seg : (window.SITE ? window.SITE.img(seg, w) : seg); }
   function money(n) { return '$' + n.toLocaleString('en-US'); }
   function qs(name) { return new URLSearchParams(location.search).get(name); }
-  var WALL_INCHES = 120; // 10-ft wall reference for scale
+  var WALL_INCHES = 165; // visible wall width in the room photo (~13.75 ft), for realistic scale
 
   document.addEventListener('DOMContentLoaded', function () {
     if (!window.SITE || !window.SITE.PRINTS) return;
@@ -186,7 +168,7 @@
       var frameWin;                                     // framed-piece WIDTH in inches
       if (aspect >= 1) frameWin = longEdge;             // landscape: long edge = width
       else frameWin = longEdge * aspect;                // portrait: long edge = height
-      var widthPct = Math.max(8, Math.min(46, (frameWin / WALL_INCHES) * 100));
+      var widthPct = Math.max(5, Math.min(40, (frameWin / WALL_INCHES) * 100));
       art.style.width = widthPct + '%';
       art.querySelector('img').style.aspectRatio = iw + ' / ' + ih;
       if (scaleEl) scaleEl.textContent = sel.size.replace(/[×x]/, ' × ') + ' in';
