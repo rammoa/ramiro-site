@@ -80,6 +80,15 @@
       <p class="dim mono" style="font-size:11px;letter-spacing:.08em;margin-top:14px;text-align:center">Shown on a 10-ft wall for scale · illustration only · frame not included</p>
     </div>
 
+    <!-- YOU MIGHT ALSO LIKE -->
+    <div class="pdp__more" data-more hidden>
+      <div class="block__head" style="margin-bottom:26px">
+        <div><div class="eyebrow mono">More prints</div><div class="lead">You might <span class="dim">also like.</span></div></div>
+        <a href="shop.html" class="link-arrow mono">ALL PRINTS →</a>
+      </div>
+      <div class="related" data-related></div>
+    </div>
+
     <div class="pdp__notfound" data-pdp-notfound hidden style="text-align:center;padding:60px 0">
       <div class="lead">Print not found.</div>
       <p class="dim" style="margin:14px 0 24px">That print may have moved. Browse the full collection.</p>
@@ -190,6 +199,27 @@
     document.querySelector('[data-pdp-add]').addEventListener('click', function () {
       if (window.addToCart) window.addToCart({ id: p.id, title: p.title, img: pimg(p.img, 600), size: sel.size, price: sel.price });
     });
+
+    // you might also like — same category first, then others (up to 4)
+    var more = document.querySelector('[data-more]');
+    var relBox = document.querySelector('[data-related]');
+    if (more && relBox) {
+      var others = window.SITE.PRINTS.filter(function (x) { return x.id !== p.id; });
+      var same = others.filter(function (x) { return x.badge === p.badge; });
+      var rest = others.filter(function (x) { return x.badge !== p.badge; });
+      same.concat(rest).slice(0, 4).forEach(function (rp) {
+        var a = document.createElement('a');
+        a.className = 'related__card';
+        a.href = 'product.html?id=' + encodeURIComponent(rp.id);
+        a.innerHTML =
+          '<span class="related__img"><span class="related__badge mono">' + rp.badge + '</span>' +
+            '<img loading="lazy" src="' + pimg(rp.img, 600) + '" alt="' + rp.title + '"></span>' +
+          '<span class="related__title">' + rp.title + '</span>' +
+          '<span class="related__price mono">from ' + money(rp.sizes[0][1]) + '</span>';
+        relBox.appendChild(a);
+      });
+      more.hidden = false;
+    }
   });
 })();
 </script>
