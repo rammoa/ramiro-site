@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Print — Ramiro Morales</title>
+<meta name="description" content="Museum-quality fine-art print by Ramiro Morales — see it framed on your wall before you buy." />
+<link rel="preconnect" href="https://images.squarespace-cdn.com" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav__brand mono" href="index.html">RAMIRO&nbsp;MORALES</a>
+  <div class="nav__links mono">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="shop.html" class="active">Prints</a>
+    <a href="about.html">About</a>
+    <a href="#" class="nav__cart" data-open-cart>Cart <span class="nav__cart-count">0</span></a>
+  </div>
+  <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="section pdp" style="padding-top:calc(var(--nav-h) + clamp(28px,5vw,60px))">
+  <div class="wrap">
+    <a class="pdp__back link-arrow mono" href="shop.html">← All prints</a>
+
+    <div class="pdp__grid" data-pdp>
+      <div class="pdp__media">
+        <div class="pdp__frame"><div class="pdp__mat"><img data-pdp-img alt="" /></div></div>
+      </div>
+      <div class="pdp__info">
+        <div class="eyebrow mono" data-pdp-badge>Print</div>
+        <h1 class="pdp__title" data-pdp-title>Print</h1>
+        <div class="pdp__price"><span data-pdp-price>$45</span> <span class="dim pdp__price-note">· fine-art print</span></div>
+
+        <div class="pdp__sizes-label mono">Size — inches</div>
+        <div class="pdp__sizes" data-pdp-sizes></div>
+
+        <button class="btn btn--accent btn--full" data-pdp-add>Add to cart</button>
+
+        <p class="pdp__desc dim">Museum-quality giclée on archival paper, hand-signed by Ramiro. Frame not included. Ships rolled in a protective tube, across the US.</p>
+        <ul class="pdp__ticks mono">
+          <li>Archival pigment inks</li>
+          <li>Signed by the artist</li>
+          <li>30-day returns</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SEE IT ON YOUR WALL -->
+    <div class="pdp__room-wrap">
+      <div class="block__head" style="margin-bottom:26px">
+        <div><div class="eyebrow mono">Preview</div><div class="lead">See it on <span class="dim">your wall.</span></div></div>
+        <div class="count mono" data-room-scale>18 × 24 in</div>
+      </div>
+      <div class="room" data-room>
+        <div class="room__wall"></div>
+        <div class="room__baseboard"></div>
+        <div class="room__floor"></div>
+        <!-- framed art on the wall (size set by JS) -->
+        <div class="room__art" data-room-art><div class="room__mat"><img data-room-img alt="" /></div></div>
+        <!-- furniture for scale -->
+        <div class="room__sofa">
+          <span class="room__sofa-back"></span>
+          <span class="room__cushion room__cushion--l"></span>
+          <span class="room__cushion room__cushion--r"></span>
+          <span class="room__sofa-seat"></span>
+          <span class="room__leg room__leg--l"></span>
+          <span class="room__leg room__leg--r"></span>
+        </div>
+        <div class="room__plant">
+          <span class="room__leaf room__leaf--1"></span>
+          <span class="room__leaf room__leaf--2"></span>
+          <span class="room__leaf room__leaf--3"></span>
+          <span class="room__pot"></span>
+        </div>
+      </div>
+      <p class="dim mono" style="font-size:11px;letter-spacing:.08em;margin-top:14px;text-align:center">Shown on a 10-ft wall for scale · illustration only · frame not included</p>
+    </div>
+
+    <div class="pdp__notfound" data-pdp-notfound hidden style="text-align:center;padding:60px 0">
+      <div class="lead">Print not found.</div>
+      <p class="dim" style="margin:14px 0 24px">That print may have moved. Browse the full collection.</p>
+      <a href="shop.html" class="btn btn--accent">Back to prints</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div><div class="footer__brand mono">RM</div><p>Aerial, architectural &amp; portrait photography across Dallas–Fort Worth.</p></div>
+      <div class="footer__col"><h4>Explore</h4><a href="portfolio.html">Portfolio</a><a href="services.html">Services</a><a href="shop.html">Prints</a><a href="about.html">About</a></div>
+      <div class="footer__col"><h4>Prints</h4><a href="shop.html">The Collection</a><a href="about.html">Commissions</a><a href="about.html">Shipping &amp; Returns</a></div>
+      <div class="footer__col"><h4>Contact</h4><a href="mailto:ramiromorales234@gmail.com">Email</a><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="footer__bottom mono"><span>© 2026 RAMIRO MORALES</span><span>DALLAS, TX</span></div>
+  </div>
+</footer>
+
+<div class="cart-overlay"></div>
+<aside class="cart" aria-label="Cart">
+  <div class="cart__head"><h3>Cart</h3><button class="cart__close" aria-label="Close">×</button></div>
+  <div class="cart__items"></div>
+  <div class="cart__foot">
+    <div class="cart__total"><span>Subtotal</span><b>$0</b></div>
+    <button class="btn btn--accent btn--full" data-checkout>Checkout</button>
+    <div class="cart__note">Shipping &amp; tax calculated at checkout. Secure payment via Stripe.</div>
+  </div>
+</aside>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/shop.js"></script>
+<script>
+/* ---- Print detail page: populate from ?id=, wire sizes, room preview ---- */
+(function () {
+  function pimg(seg, w) { return /^(assets\/|https?:)/.test(seg) ? seg : (window.SITE ? window.SITE.img(seg, w) : seg); }
+  function money(n) { return '$' + n.toLocaleString('en-US'); }
+  function qs(name) { return new URLSearchParams(location.search).get(name); }
+  var WALL_INCHES = 120; // 10-ft wall reference for scale
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.SITE || !window.SITE.PRINTS) return;
+    var id = qs('id');
+    var p = window.SITE.PRINTS.filter(function (x) { return x.id === id; })[0];
+    var grid = document.querySelector('[data-pdp]');
+    if (!p) {
+      if (grid) grid.hidden = true;
+      var rw = document.querySelector('.pdp__room-wrap'); if (rw) rw.hidden = true;
+      var nf = document.querySelector('[data-pdp-notfound]'); if (nf) nf.hidden = false;
+      return;
+    }
+
+    document.title = p.title + ' — Prints — Ramiro Morales';
+    document.querySelector('[data-pdp-badge]').textContent = p.badge;
+    document.querySelector('[data-pdp-title]').textContent = p.title;
+
+    var mainImg = document.querySelector('[data-pdp-img]');
+    var roomImg = document.querySelector('[data-room-img]');
+    mainImg.src = pimg(p.img, 1400); mainImg.alt = p.title;
+    roomImg.src = pimg(p.img, 1000); roomImg.alt = p.title + ' framed on a wall';
+
+    var priceEl = document.querySelector('[data-pdp-price]');
+    var scaleEl = document.querySelector('[data-room-scale]');
+    var art = document.querySelector('[data-room-art]');
+
+    var sel = { size: p.sizes[0][0], price: p.sizes[0][1] };
+
+    // build size buttons
+    var sizeBox = document.querySelector('[data-pdp-sizes]');
+    p.sizes.forEach(function (s, i) {
+      var b = document.createElement('button');
+      b.className = 'size-btn' + (i === 0 ? ' sel' : '');
+      b.setAttribute('data-size', s[0]);
+      b.setAttribute('data-p', s[1]);
+      b.textContent = s[0] + '"';
+      b.addEventListener('click', function () {
+        sizeBox.querySelectorAll('.size-btn').forEach(function (x) { x.classList.remove('sel'); });
+        b.classList.add('sel');
+        sel.size = s[0]; sel.price = s[1];
+        priceEl.textContent = money(s[1]);
+        applyRoomScale();
+      });
+      sizeBox.appendChild(b);
+    });
+    priceEl.textContent = money(sel.price);
+
+    // scale the framed art on the wall to the selected physical size
+    function applyRoomScale() {
+      var nums = sel.size.split(/[×x]/).map(function (n) { return parseFloat(n); });
+      var longEdge = Math.max(nums[0], nums[1]);        // 18 / 24 / 36
+      var iw = roomImg.naturalWidth || 3, ih = roomImg.naturalHeight || 2;
+      var aspect = iw / ih;
+      var frameWin;                                     // framed-piece WIDTH in inches
+      if (aspect >= 1) frameWin = longEdge;             // landscape: long edge = width
+      else frameWin = longEdge * aspect;                // portrait: long edge = height
+      var widthPct = Math.max(8, Math.min(46, (frameWin / WALL_INCHES) * 100));
+      art.style.width = widthPct + '%';
+      art.querySelector('img').style.aspectRatio = iw + ' / ' + ih;
+      if (scaleEl) scaleEl.textContent = sel.size.replace(/[×x]/, ' × ') + ' in';
+    }
+    if (roomImg.complete && roomImg.naturalWidth) applyRoomScale();
+    roomImg.addEventListener('load', applyRoomScale);
+    mainImg.addEventListener('load', function(){ if(!roomImg.naturalWidth) applyRoomScale(); });
+
+    // add to cart (reuses shop.js cart)
+    document.querySelector('[data-pdp-add]').addEventListener('click', function () {
+      if (window.addToCart) window.addToCart({ id: p.id, title: p.title, img: pimg(p.img, 600), size: sel.size, price: sel.price });
+    });
+  });
+})();
+</script>
+</body>
+</html>
