@@ -69,25 +69,76 @@
       });
     });
 
+    /* ---- Cinematic word split for headlines (data-split) ---- */
+    function splitWords(el, ctx) {
+      var nodes = Array.prototype.slice.call(el.childNodes);
+      el.innerHTML = '';
+      nodes.forEach(function (node) {
+        if (node.nodeType === 3) {
+          node.textContent.split(/(\s+)/).forEach(function (tok) {
+            if (tok === '') return;
+            if (/^\s+$/.test(tok)) { el.appendChild(document.createTextNode(' ')); return; }
+            var s = document.createElement('span'); s.className = 'sw'; s.textContent = tok;
+            s.style.transitionDelay = (ctx.i * 0.045) + 's'; ctx.i++;
+            el.appendChild(s);
+          });
+        } else if (node.nodeType === 1) {
+          if (node.tagName === 'BR') { el.appendChild(node); return; }
+          splitWords(node, ctx);           // recurse so wrappers like .dim keep styling
+          el.appendChild(node);
+        }
+      });
+    }
+    document.querySelectorAll('[data-split]').forEach(function (el) { splitWords(el, { i: 0 }); });
+
     /* ---- Reveal on scroll ---- */
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('.reveal, .cell, .product').forEach(function (el) { io.observe(el); });
+    document.querySelectorAll('.reveal, .cell, .product, [data-split]').forEach(function (el) { io.observe(el); });
 
-    /* ---- Scroll-linked: nav bg, hero parallax, pinned scale ---- */
+    /* ---- Scroll-linked: nav bg, scrubbed hero, parallax, pinned scale ---- */
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var scene = document.querySelector('[data-hero-scene]');
     var heroMedia = document.querySelector('.hero__media');
+    var heroInner = document.querySelector('[data-hero-inner]');
+    var heroCue = document.querySelector('[data-hero-cue]');
+    var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
     var pin = document.querySelector('.pin');
     var pinFrame = document.querySelector('.pin__frame');
     var pinCap = document.querySelector('.pin__cap');
     var ticking = false;
     function update() {
-      var y = window.scrollY;
+      var y = window.scrollY, vh = window.innerHeight;
       if (nav) nav.classList.toggle('scrolled', y > 40);
-      if (heroMedia) heroMedia.style.transform = 'translateY(' + (y * 0.26) + 'px) scale(' + (1 + y * 0.00012) + ')';
+
+      if (!reduce) {
+        if (scene && heroMedia) {
+          /* Scroll-scrubbed hero: progress across the tall scene drives the
+             media scale/parallax and the content hand-off. */
+          var range = scene.offsetHeight - vh;
+          var p = range > 0 ? clamp((-scene.getBoundingClientRect().top) / range, 0, 1) : 0;
+          heroMedia.style.transform = 'scale(' + (1.12 - 0.12 * p) + ') translate3d(0,' + (p * -4) + '%,0)';
+          var f = clamp((p - 0.45) / 0.4, 0, 1);          // content leaves after 45%
+          if (heroInner) { heroInner.style.transform = 'translate3d(0,' + (f * -70) + 'px,0)'; heroInner.style.opacity = String(1 - f); }
+          if (heroCue && p > 0.01) heroCue.style.opacity = String(clamp(1 - p * 8, 0, 1));
+        } else if (heroMedia) {
+          /* Other pages (short hero): gentle parallax + scale. */
+          heroMedia.style.transform = 'translateY(' + (y * 0.26) + 'px) scale(' + (1 + y * 0.00012) + ')';
+        }
+
+        /* Generic media parallax (scale baked in so edges never show). */
+        for (var i = 0; i < parallaxEls.length; i++) {
+          var el = parallaxEls[i], r2 = el.getBoundingClientRect();
+          if (r2.bottom < -80 || r2.top > vh + 80) continue;
+          var off = (r2.top + r2.height / 2) - vh / 2;
+          el.style.transform = 'translate3d(0,' + (-off * parseFloat(el.getAttribute('data-parallax') || '0')) + 'px,0) scale(1.2)';
+        }
+      }
+
       if (pin && pinFrame) {
         var r = pin.getBoundingClientRect();
-        var total = pin.offsetHeight - window.innerHeight;
+        var total = pin.offsetHeight - vh;
         var prog = clamp((-r.top) / total, 0, 1);
         var scale = clamp(0.5 + prog * 1.15, 0.5, 1.65);
         pinFrame.style.transform = 'scale(' + scale + ')';
