@@ -23,27 +23,29 @@
   <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero__media"><img src="https://images.squarespace-cdn.com/content/v1/63ba51fb90f98d55e734bffe/1673491763391-B9MS42ETWEONO4VIQZ82/DJI_0200.JPG?format=2500w" alt="Dallas skyline at dusk" /></div>
-  <div class="hero__scrim"></div>
-  <div class="hero__inner">
-    <div class="hero__eyebrow mono">Photography — Dallas, TX</div>
-    <h1 data-hero-title="RAMIRO MORALES"></h1>
-    <div class="hero__sub">Aerial, architectural &amp; portrait work with a cinematic eye.</div>
-    <div class="hero__actions">
-      <a href="portfolio.html" class="btn btn--solid">View Portfolio</a>
-      <a href="shop.html" class="btn btn--ghost">Shop Prints</a>
+<!-- HERO (scroll-scrubbed cinematic scene) -->
+<header class="hero hero--scene" data-hero-scene>
+  <div class="hero__pin">
+    <div class="hero__media" data-hero-media><img src="https://images.squarespace-cdn.com/content/v1/63ba51fb90f98d55e734bffe/1673491763391-B9MS42ETWEONO4VIQZ82/DJI_0200.JPG?format=2500w" alt="Dallas skyline at dusk" /></div>
+    <div class="hero__scrim"></div>
+    <div class="hero__inner" data-hero-inner>
+      <div class="hero__eyebrow mono">Photography — Dallas, TX</div>
+      <h1 data-hero-title="RAMIRO MORALES"></h1>
+      <div class="hero__sub">Aerial, architectural &amp; portrait work with a cinematic eye.</div>
+      <div class="hero__actions">
+        <a href="portfolio.html" class="btn btn--solid">View Portfolio</a>
+        <a href="shop.html" class="btn btn--ghost">Shop Prints</a>
+      </div>
     </div>
+    <a href="#intro" class="hero__cue mono" data-hero-cue><span>SCROLL</span><span class="bar"></span></a>
   </div>
-  <a href="#intro" class="hero__cue mono"><span>SCROLL</span><span class="bar"></span></a>
 </header>
 
 <!-- INTRO STATEMENT -->
 <section class="section statement" id="intro">
   <div class="wrap">
     <div class="eyebrow mono reveal">Approach</div>
-    <p class="reveal">Five years framing Texas from the ground and the sky. <span class="dim">Every property, every face, every horizon — captured to move people.</span></p>
+    <p data-split>Five years framing Texas from the ground and the sky. <span class="dim">Every property, every face, every horizon — captured to move people.</span></p>
   </div>
 </section>
 
@@ -53,7 +55,7 @@
     <div class="block__head">
       <div>
         <div class="eyebrow mono reveal">Selected Work</div>
-        <div class="lead reveal">A look <span class="dim">above &amp; around.</span></div>
+        <div class="lead" data-split>A look <span class="dim">above &amp; around.</span></div>
       </div>
       <a href="portfolio.html" class="link-arrow mono reveal">FULL PORTFOLIO →</a>
     </div>
@@ -70,7 +72,7 @@
     <div class="block__head">
       <div>
         <div class="eyebrow mono reveal">Services</div>
-        <div class="lead reveal">Hire the <span class="dim">whole kit.</span></div>
+        <div class="lead" data-split>Hire the <span class="dim">whole kit.</span></div>
       </div>
       <a href="services.html" class="link-arrow mono reveal">ALL SERVICES &amp; PRICING →</a>
     </div>
@@ -102,7 +104,7 @@
   <div class="wrap">
     <div class="split">
       <div class="split__media reveal">
-        <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/63ba51fb90f98d55e734bffe/1674612118141-NSB5OU8GD16M4ORVM2O8/DJI_0383-Edit.jpg?format=1400w" alt="Golden hour over Dallas print" />
+        <img loading="lazy" class="parallax" data-parallax="0.05" src="https://images.squarespace-cdn.com/content/v1/63ba51fb90f98d55e734bffe/1674612118141-NSB5OU8GD16M4ORVM2O8/DJI_0383-Edit.jpg?format=1400w" alt="Golden hour over Dallas print" />
       </div>
       <div class="reveal">
         <div class="eyebrow mono">Fine-Art Prints</div>
@@ -118,7 +120,7 @@
 <section class="cta">
   <div class="wrap">
     <div class="eyebrow mono reveal" style="justify-content:center">Let's work</div>
-    <h2 class="reveal">Let's make<br>something sharp.</h2>
+    <h2 data-split>Let's make<br>something sharp.</h2>
     <p class="reveal">Booking real estate, aerial, portrait &amp; video across Dallas–Fort Worth.</p>
     <div class="cta__actions reveal">
       <a href="services.html" class="btn btn--solid">Book a shoot</a>
