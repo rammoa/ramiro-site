@@ -79,6 +79,13 @@
   </div>
 </section>
 
+<!-- Lightbox: click any print to view it large -->
+<div class="lightbox" data-lightbox hidden>
+  <button class="lightbox__close" aria-label="Close">&times;</button>
+  <img data-lightbox-img alt="" />
+  <div class="lightbox__hint">Click anywhere to close · Esc</div>
+</div>
+
 <footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
@@ -133,6 +140,23 @@
     var roomImg = document.querySelector('[data-room-img]');
     mainImg.src = pimg(p.img, 1400); mainImg.alt = p.title;
     roomImg.src = pimg(p.img, 1000); roomImg.alt = p.title + ' framed on a wall';
+
+    // Landscape prints get a full-width hero so they read large, not small.
+    function checkWide() {
+      if (mainImg.naturalWidth && mainImg.naturalWidth > mainImg.naturalHeight * 1.05) grid.classList.add('pdp--wide');
+    }
+    if (mainImg.complete && mainImg.naturalWidth) checkWide();
+    mainImg.addEventListener('load', checkWide);
+
+    // Click-to-enlarge lightbox (works for every print)
+    var lb = document.querySelector('[data-lightbox]');
+    var lbImg = lb ? lb.querySelector('[data-lightbox-img]') : null;
+    var frame = document.querySelector('.pdp__frame');
+    function openLB() { if (!lb) return; lbImg.src = pimg(p.img, 2000); lbImg.alt = p.title; lb.hidden = false; document.body.style.overflow = 'hidden'; }
+    function closeLB() { if (!lb) return; lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; }
+    if (frame) frame.addEventListener('click', openLB);
+    if (lb) lb.addEventListener('click', closeLB);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb && !lb.hidden) closeLB(); });
 
     var priceEl = document.querySelector('[data-pdp-price]');
     var scaleEl = document.querySelector('[data-room-scale]');
