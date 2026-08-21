@@ -400,3 +400,33 @@ a.product__title:hover{color:var(--accent)}
 .related__card:hover .related__title{color:var(--accent)}
 .related__price{display:block;font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:3px}
 @media(max-width:820px){ .related{grid-template-columns:repeat(2,1fr)} }
+
+/* ============================================================
+   HOMEPAGE CINEMATIC MOTION — scroll-scrubbed hero, type reveals, parallax
+   ============================================================ */
+/* Scroll-scrubbed hero: a tall scene with a pinned viewport. JS drives the
+   media scale/parallax and the content hand-off from scroll progress. */
+.hero--scene{height:190svh;min-height:1120px;overflow:visible;display:block}
+.hero__pin{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center}
+.hero--scene .hero__media{will-change:transform;transform:scale(1.12)}
+.hero--scene .hero__inner{will-change:transform,opacity}
+.hero--scene .hero__cue{will-change:opacity}
+
+/* Cinematic word reveal — headlines fade, lift, and un-blur word by word. */
+.sw{display:inline-block;opacity:0;transform:translateY(0.5em);filter:blur(7px);will-change:transform,opacity,filter}
+[data-split].in .sw{opacity:1;transform:none;filter:blur(0);
+  transition:opacity .7s var(--ease-io), transform .85s var(--ease-io), filter .85s var(--ease-io)}
+
+/* Parallax media — depth on scroll; JS sets the transform (scale baked in). */
+.parallax{will-change:transform}
+
+@media(prefers-reduced-motion:reduce){
+  /* Collapse the scrubbed hero back to a normal static hero */
+  .hero--scene{height:100svh;min-height:600px}
+  .hero__pin{position:static;height:100svh}
+  .hero--scene .hero__media{transform:none!important}
+  .hero--scene .hero__inner{transform:none!important;opacity:1!important}
+  .sw{opacity:1!important;transform:none!important;filter:none!important}
+  .parallax{transform:none!important}
+}
