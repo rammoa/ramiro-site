@@ -182,6 +182,21 @@
             return '<button class="size-btn' + (i === 0 ? ' sel' : '') + '" data-size="' + s[0] + '" data-p="' + s[1] + '">' + s[0] + '"</button>';
           }).join('') + '</div>' +
           '<button class="btn btn--accent btn--full" data-add>Add to cart</button>';
+        // Orientation: landscape photos display in their true horizontal shape;
+        // portraits keep the uniform 4:5 card. Ratio is set once the image knows its size.
+        (function () {
+          var box = el.querySelector('.product__img');
+          var im = box.querySelector('img');
+          function orient() {
+            if (im.naturalWidth && im.naturalWidth > im.naturalHeight * 1.05) {
+              box.style.aspectRatio = im.naturalWidth + ' / ' + im.naturalHeight;
+              box.classList.add('is-wide');
+            }
+          }
+          if (im.complete && im.naturalWidth) orient();
+          im.addEventListener('load', orient);
+        })();
+
         // size selection
         var priceEl = el.querySelector('[data-price]');
         var sel = { size: sizes[0][0], price: sizes[0][1] };
