@@ -191,6 +191,7 @@
             if (im.naturalWidth && im.naturalWidth > im.naturalHeight * 1.05) {
               box.style.aspectRatio = im.naturalWidth + ' / ' + im.naturalHeight;
               box.classList.add('is-wide');
+              el.classList.add('feature'); // landscape prints span two columns
             }
           }
           if (im.complete && im.naturalWidth) orient();
